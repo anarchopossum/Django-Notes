@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here. these become databases
 class Notes(models.Model):
     # these are the attributes of the table
