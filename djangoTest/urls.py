@@ -28,4 +28,5 @@ urlpatterns = [
     # this makes it so if we delete home it won't conflict with other parts of the site
 
     path('', include('home.urls')),
+    path('smart/', include('notes.urls')),
 ]

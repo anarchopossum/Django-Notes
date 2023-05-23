@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes 📝</title>
+</head>
+<body>
+    <h1>Here are the Notes!</h1>
+    <ul>
+        {#  This is Django Template logic (anything inbetween the curly brace area)  #}
+        {#  For every note within notes, make a list item with the note title  #}
+        {% for note in notes %}
+            <li>{{ note.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
