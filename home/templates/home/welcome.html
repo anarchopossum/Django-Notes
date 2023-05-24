@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,13 @@
     <title>Title</title>
 </head>
 <body>
+{% block content %}
     <h1>Welcome to Notes!</h1>
     {#  Using Double Brackets will fetch the argument data  #}
     <p> Todays Date is: {{ today }}</p>
+    {#  you must link the href by giving a name to the app url you want it to connect to  #}
+    {#  Look at notes URL for an example  #}
+    <a href="{% url 'notes.list' %}" class="btn btn-primary">Check out these notes!</a>
+{% endblock %}
 </body>
 </html>
