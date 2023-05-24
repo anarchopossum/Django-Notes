@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    {#  Use the Link to point to the CSS file. don't forget to add load static like above.  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <meta charset="UTF-8">
     <title>Notes 📝</title>
 </head>
@@ -10,7 +13,7 @@
         {#  This is Django Template logic (anything inbetween the curly brace area)  #}
         {#  For every note within notes, make a list item with the note title  #}
         {% for note in notes %}
-            <li>{{ note.title }}</li>
+            <li class="note-li">{{ note.title }}</li>
         {% endfor %}
     </ul>
 </body>
