@@ -1,12 +1,25 @@
 {% extends "base.html" %}
-
+<!DOCTYPE html>
+<html lang="en">
+<body>
 {% block content %}
 {#  Post sends information back to the server  #}
 {#  the csrf token allows for forums to have a unique token to validate authenticity.   #}
 {#  Django knows what is expected for the form since it knows what a note needs, a title and text. So it will supply  #}
 {#  the appropriate html items to give input.  #}
-    <form action="{% url 'notes.new' %}" method='POST'>{% csrf_token %}
+    <form method='POST'>{% csrf_token %}
     {{ form }}
     <button type="submit" class="btn btn-primary my-5">Submit</button>
     </form>
+
+    {% if form.errors %}
+        <div class="alert alert-danger my-5">
+            {{ form.errors.title.as_text }}
+        </div>
+    {% endif %}
+
+    <a href="{% url 'notes.list' %}" class="btn btn-secondary my-5">Back</a>
+
 {% endblock %}
+</body>
+</html>
