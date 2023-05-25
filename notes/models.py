@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here. these become databases
@@ -12,3 +13,5 @@ class Notes(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    # when the user is deleted remove all the notes for that user
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notes")
