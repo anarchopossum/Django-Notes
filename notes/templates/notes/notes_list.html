@@ -8,6 +8,8 @@
 </head>
 <body>
 {% block content %}
+    <a href="{% url 'notes.new' %}" class="btn btn-primary">Create a New Note</a>
+    <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
     <h1 class="my-5">Here are the Notes!</h1>
 
     <div class="row row-cols3 g-2">
