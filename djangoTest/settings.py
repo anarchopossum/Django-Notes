@@ -131,3 +131,7 @@ STATICFILES_DIR = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django normally redirects a user to /accounts/profile/ after login,
+# but we don't have that page. So we will take them to their notes instead.
+LOGIN_REDIRECT_URL = 'smart/notes'
